@@ -55,7 +55,7 @@ if($LASTEXITCODE -ne 0)
 
 # Using the explicit remote and branch name for safety
 Write-Host "Pushing to origin $currentBranch..." -ForegroundColor Cyan
-git push origin $currentBranch --rebase
+git pull origin $currentBranch --rebase
 if($LASTEXITCODE -ne 0)
 {
     Write-Host "Sync conflict! You might have edited the same line of code on two PCs." -ForegroundColor Red
