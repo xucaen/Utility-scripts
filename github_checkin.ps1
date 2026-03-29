@@ -24,6 +24,11 @@ if ($LASTEXITCODE -ne 0) {
     exit $LASTEXITCODE
 }
 
+# 2. Output changes on screen ---
+Write-Host "`n--- Detected Changes ---" -ForegroundColor Yellow
+git status -s  # Shows a concise list of modified/new files
+Write-Host "------------------------`n"
+
 
 # 3. Handle Commit Message
 if ([string]::IsNullOrWhiteSpace($CommitMessage)) {
